@@ -5,6 +5,7 @@ copyright : "2020 Chua Hou"
 
 extra-source-files:
 - README.rst
+- data/control.in
 
 dependencies:
 - base
