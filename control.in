@@ -1,0 +1,8 @@
+Section: misc
+Priority: optional
+Homepage: https://github.com/chuahou/quickdep
+Standards-Version: 3.9.2
+
+Description: temporary metapackage by quickdep
+ Temporary metapackage for temporary dependency installation, generated using
+ equivs. See https://github.com/chuahou/quickdep for more information.
