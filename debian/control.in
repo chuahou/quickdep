@@ -1,0 +1,14 @@
+Package: quickdep
+Version: VERSION
+Section: text
+Priority: optional
+Architecture: ARCHITECTURE
+Installed-Size: INSTALLED_SIZE
+Depends: libc6, libgmp10, zlib1g, equivs
+Maintainer: Chua Hou <human+github@chuahou.dev>
+Description: quick metapackage creator
+ Quickdep creates a metapackage depending on a specified list of dependencies,
+ allowing for installation of that metapackage to cleanly install—and later
+ remove—these dependencies, preserving manual / auto installation marking. It
+ should be useful for temporarily installing dependencies for compiling
+ something from source, for example.
