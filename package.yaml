@@ -12,6 +12,7 @@ data-files:
 dependencies:
 - base
 - directory
+- process
 - temporary
 
 ghc-options: -Wall
