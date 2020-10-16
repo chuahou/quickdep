@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c93691bda92f3229aabaafab89fcb1b3cd37bf7c711065552d86b345cf350588
+-- hash: 1dcbbdbfb9e068f651ec3fe6a210ab99accc9412fd712cd0056a35fdcd05c106
 
 name:           quickdep
-version:        0.1.0.0
+version:        0.1.1.0
 author:         Chua Hou <human+github@chuahou.dev>
 maintainer:     Chua Hou <human+github@chuahou.dev>
 copyright:      2020 Chua Hou
