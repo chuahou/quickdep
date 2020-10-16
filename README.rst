@@ -16,6 +16,8 @@ Dependencies
 ============
 
 * equivs (``apt-get install equivs``)
+* stack
+* ghc-8.6.5
 
 .. |License: MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
 	:target: https://opensource.org/licenses/MIT

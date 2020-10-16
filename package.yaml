@@ -1,0 +1,17 @@
+name      : quickdep
+version   : 0.1.0.0
+author    : "Chua Hou <human+github@chuahou.dev>"
+copyright : "2020 Chua Hou"
+
+extra-source-files:
+- README.rst
+
+dependencies:
+- base
+
+ghc-options: -Wall
+
+executables:
+    quickdep:
+        main: Main.hs
+        source-dirs: src
