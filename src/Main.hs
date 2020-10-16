@@ -1,19 +1,12 @@
 -- SPDX-License-Identifier: MIT
 -- Copyright (c) 2020 Chua Hou
 
-import           Paths_quickdep     (getDataFileName)
 import           System.Environment (getArgs, getProgName)
 import qualified System.IO          as IO
 import           System.IO.Temp     (withSystemTempFile)
 import           System.Process     (callProcess)
 
--- | Path of template file (to be passed through @getDataFileName@).
-templatePath :: FilePath
-templatePath = "data/control.in"
-
--- | Copies contents of template file to given file handle.
-copyTemplate :: IO.Handle -> IO ()
-copyTemplate h = getDataFileName templatePath >>= IO.readFile >>= IO.hPutStr h
+import           QuickdepFiles
 
 -- | Prints usage help.
 printUsage :: IO ()
@@ -38,7 +31,7 @@ main = getArgs >>= handleArgs
 createPackage :: String -> [String] -> IO ()
 createPackage name deps = withSystemTempFile "control" f
     where
-        f p h = do copyTemplate h -- copy template to file
+        f p h = do IO.hPutStr   h $ template -- copy template to file
                    IO.hPutStrLn h $ "Package: " <> name -- add package name
                    IO.hPutStrLn h $ "Depends:" -- add dependencies
                    IO.hPutStrLn h $ formatDeps deps
