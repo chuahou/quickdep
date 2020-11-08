@@ -23,7 +23,7 @@ generated package should be done with caution—check the contents first!
 
 To build, simply navigate to the project directory and run::
 
-	stack install
+	hpack; cabal v2-build
 
 Alternatively, download a binary release.
 
@@ -49,8 +49,8 @@ Dependencies
 ============
 
 * equivs (``apt-get install equivs``)
-* stack
-* ghc-8.6.5
+* cabal-install
+* ghc-8.8.4
 
 .. |License: MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
 	:target: https://opensource.org/licenses/MIT
