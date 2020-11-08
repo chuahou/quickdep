@@ -1,7 +1,0 @@
-resolver: ghc-8.6.5
-packages:
-- .
-extra-deps:
-- exceptions-0.10.4
-- file-embed-0.0.13.0
-- temporary-1.3

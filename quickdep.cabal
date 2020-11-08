@@ -1,13 +1,18 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.2.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1dcbbdbfb9e068f651ec3fe6a210ab99accc9412fd712cd0056a35fdcd05c106
+-- hash: aa37ecedb7d443ad1b8c09bbb026100522239fc34a4bf30ffb3b6b742c079aeb
 
 name:           quickdep
-version:        0.1.1.0
+version:        0.2.0.0
+synopsis:       A quick tool to temporarily install a Debian dependencies
+description:    Quickdep creates a metapackage depending on a specified list of dependencies, allowing for installation of that metapackage to cleanly install—and later remove—these dependencies, preserving manual / auto installation marking. It should be useful for temporarily installing dependencies for compiling something from source, for example.
+category:       program
+homepage:       https://github.com/chuahou/quickdep#readme
+bug-reports:    https://github.com/chuahou/quickdep/issues
 author:         Chua Hou <human+github@chuahou.dev>
 maintainer:     Chua Hou <human+github@chuahou.dev>
 copyright:      2020 Chua Hou
@@ -19,6 +24,10 @@ extra-source-files:
 data-files:
     data/control.in
 
+source-repository head
+  type: git
+  location: https://github.com/chuahou/quickdep
+
 executable quickdep
   main-is: Main.hs
   other-modules:
@@ -28,9 +37,9 @@ executable quickdep
       src
   ghc-options: -Wall
   build-depends:
-      base
-    , directory
-    , file-embed
-    , process
-    , temporary
+      base >=4.13.0.0 && <4.14
+    , directory >=1.3.6.1 && <1.4
+    , file-embed >=0.0.13.0 && <0.1
+    , process >=1.6.10.0 && <1.7
+    , temporary >=1.3 && <1.4
   default-language: Haskell2010

@@ -1,7 +1,16 @@
-name      : quickdep
-version   : 0.1.1.0
-author    : "Chua Hou <human+github@chuahou.dev>"
-copyright : "2020 Chua Hou"
+name        : quickdep
+version     : 0.2.0.0
+author      : "Chua Hou <human+github@chuahou.dev>"
+copyright   : "2020 Chua Hou"
+github      : chuahou/quickdep
+category    : program
+synopsis    : A quick tool to temporarily install a Debian dependencies
+description :
+    Quickdep creates a metapackage depending on a specified list of
+    dependencies, allowing for installation of that metapackage to cleanly
+    install—and later remove—these dependencies, preserving manual / auto
+    installation marking. It should be useful for temporarily installing
+    dependencies for compiling something from source, for example.
 
 extra-source-files:
 - README.rst
@@ -10,11 +19,11 @@ data-files:
 - data/*
 
 dependencies:
-- base
-- directory
-- file-embed
-- process
-- temporary
+- base       ^>= 4.13.0.0
+- directory  ^>= 1.3.6.1
+- file-embed ^>= 0.0.13.0
+- process    ^>= 1.6.10.0
+- temporary  ^>= 1.3
 
 ghc-options: -Wall
 
