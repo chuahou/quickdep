@@ -1,0 +1,17 @@
+Source:            quickdep
+Maintainer:        Chua Hou <human+github@chuahou.dev>
+Section:           admin
+Priority:          optional
+Standards-Version: 3.9.2
+Build-Depends:     debhelper (>= 11)
+Homepage:          https://github.com/chuahou/quickdep
+
+Package:      quickdep
+Architecture: amd64
+Depends:      ${shlibs:Depends}, ${misc:Depends}
+Description:  quick metapackage creator
+ Quickdep creates a metapackage depending on a specified list of dependencies,
+ allowing for installation of that metapackage to cleanly install—and later
+ remove—these dependencies, preserving manual / auto installation marking. It
+ should be useful for temporarily installing dependencies for compiling
+ something from source, for example.

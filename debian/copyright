@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: quickdep
+Upstream-Contact: Chua Hou <human+github@chuahou.dev>
+Source: https://github.com/chuahou/quickdep
+
+Files: *
+Copyright: 2020 Chua Hou <human+github@chuahou.dev>
+License: MIT
