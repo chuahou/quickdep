@@ -19,20 +19,28 @@ Usage: $0 create <package-name>.meta
 Usage: $0 remove <package-name>
 	Purges <package-name> with apt-get with --auto-remove, removing the
 	corresponding package in $DATA_DIR.
+Usage: $0 list
+	Lists packages previously created and not yet uninstalled.
 EOF
 }
 
-if [ $# -lt 2 ]; then
+if [ $# -lt 1 ]; then
 	print_usage
 	exit 1
 fi
 
-PKG_NAME=$(sed 's/\.meta$//' <<< $2)
-DEB_NAME=${PKG_NAME}_1.0_all.deb
+if [ $# -ge 2 ]; then
+	PKG_NAME=$(sed 's/\.meta$//' <<< $2)
+	DEB_NAME=${PKG_NAME}_1.0_all.deb
+fi
 
 case $1 in
 	create)
 		(
+			if [ $# -lt 2 ]; then
+				print_usage
+				exit 1
+			fi
 			cd $DATA_DIR
 			[ -f ./$DEB_NAME ] && rm ./$DEB_NAME
 			shift 1
@@ -42,6 +50,10 @@ case $1 in
 		;;
 	remove)
 		(
+			if [ $# -lt 2 ]; then
+				print_usage
+				exit 1
+			fi
 			cd $DATA_DIR
 			if [ ! -f ./$DEB_NAME ]; then
 				echo "No such package installed by quickdep-mgr"
@@ -50,6 +62,9 @@ case $1 in
 			sudo apt-get purge --auto-remove $PKG_NAME
 			rm ./$DEB_NAME
 		)
+		;;
+	list)
+		ls $DATA_DIR | sed 's/_1\.0_all\.deb$//'
 		;;
 	*) print_usage; exit 1 ;;
 esac
