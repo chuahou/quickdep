@@ -28,7 +28,7 @@ $(BINDIR):
 	mkdir -p $@
 
 clean:
-	[ -d $(BINDIR) ] && rm $(BINDIR) -rf
+	[ -d $(BINDIR) ] && rm $(BINDIR) -rf || true
 	cabal clean
 
 dist: $(PACKAGE)_$(PACKAGE_VER)_amd64.tar.gz
