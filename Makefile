@@ -19,6 +19,7 @@ $(BINDIR)/quickdep-internal: $(BINDIR) force
 	hpack
 	cabal build
 	cp $(CABAL_BUILD)/quickdep $@
+	strip $@
 
 $(BINDIR)/%: $(SCRIPTSDIR)/%.sh
 	cp $< $@
@@ -30,4 +31,14 @@ clean:
 	[ -d $(BINDIR) ] && rm $(BINDIR) -rf
 	cabal clean
 
-.PHONY: force all clean
+dist: $(PACKAGE)_$(PACKAGE_VER)_amd64.tar.gz
+
+$(PACKAGE)_$(PACKAGE_VER)_amd64.tar.gz: all
+	[ $(ARCH) = "x86_64-linux" ]
+	mkdir $(PACKAGE)
+	cp -r $(BINDIR) $(PACKAGE)
+	[ -f $@ ] && rm $@ || true
+	tar czf $@ $(PACKAGE)
+	rm $(PACKAGE) -rf
+
+.PHONY: force all clean dist
