@@ -41,4 +41,13 @@ $(PACKAGE)_$(PACKAGE_VER)_amd64.tar.gz: all
 	tar czf $@ $(PACKAGE)
 	rm $(PACKAGE) -rf
 
-.PHONY: force all clean dist
+PREFIX ?= /usr/local
+TGT    := $(DESTDIR)$(PREFIX)/bin
+install:
+	install -D $(BINDIR)/* -t $(TGT)
+uninstall:
+	for binary in $$(ls $(BINDIR)); do \
+		rm $(TGT)/$$binary; \
+	done
+
+.PHONY: force all clean dist install uninstall
