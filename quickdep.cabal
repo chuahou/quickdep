@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: aa37ecedb7d443ad1b8c09bbb026100522239fc34a4bf30ffb3b6b742c079aeb
+-- hash: c0d98bd861c97e7c139f2411c0431ffd11f1c466028c57c7515211891ee6c223
 
 name:           quickdep
-version:        0.2.0.0
+version:        0.3.0.0
 synopsis:       A quick tool to temporarily install a Debian dependencies
 description:    Quickdep creates a metapackage depending on a specified list of dependencies, allowing for installation of that metapackage to cleanly install—and later remove—these dependencies, preserving manual / auto installation marking. It should be useful for temporarily installing dependencies for compiling something from source, for example.
 category:       program
